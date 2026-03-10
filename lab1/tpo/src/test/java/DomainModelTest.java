@@ -1,7 +1,10 @@
-package org.vaskozlov.lab1;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.vaskozlov.lab1.Arthur;
+import org.vaskozlov.lab1.Fish;
+import org.vaskozlov.lab1.Ford;
+import org.vaskozlov.lab1.Vial;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DomainModelTest {

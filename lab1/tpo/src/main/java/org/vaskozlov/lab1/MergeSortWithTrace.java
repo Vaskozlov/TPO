@@ -19,7 +19,7 @@ public class MergeSortWithTrace {
                                                     List<String> trace,
                                                     String prefix) {
         int n = arr.size();
-        String current = buildCurrent(arr, prefix);
+        String current = appendCurrentArrayToTrace(arr, prefix);
 
         trace.add("ENTER " + current + "  (len=" + n + ")");
 
@@ -37,6 +37,7 @@ public class MergeSortWithTrace {
 
         List<Integer> right = mergeSortRecursive(
                 new ArrayList<>(arr.subList(mid, n)), trace, prefix + "  R ");
+
         trace.add("RIGHT_DONE " + current + " -> " + right);
 
         trace.add("START_MERGE  " + left + " + " + right);
@@ -80,7 +81,7 @@ public class MergeSortWithTrace {
         return merged;
     }
 
-    private static String buildCurrent(List<Integer> arr, String prefix) {
+    private static String appendCurrentArrayToTrace(List<Integer> arr, String prefix) {
         if (arr.isEmpty()) {
             return prefix + "[]";
         }

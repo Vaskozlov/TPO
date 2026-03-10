@@ -33,9 +33,13 @@ class TaylorArctanTest {
         assertEquals(Math.atan(x), approx, delta);
     }
 
-    @Test
-    void testOutsideConvergence() {
+    @ParameterizedTest
+    @CsvSource({
+            "1.5",
+            "-1.5"
+    })
+    void testOutsideConvergence(double x) {
         assertThrows(IllegalArgumentException.class,
-                () -> TaylorArctan.taylorArctan(1.5));
+                () -> TaylorArctan.taylorArctan(x));
     }
 }
